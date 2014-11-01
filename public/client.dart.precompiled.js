@@ -2844,7 +2844,7 @@ var $$ = {};
     "^": "Object;connectPending,webSocket",
     connect$0: function() {
       this.connectPending = false;
-      var t1 = W.WebSocket_WebSocket("ws://127.0.0.1:4040", null);
+      var t1 = W.WebSocket_WebSocket("ws://pbxbox.domain/ws/chat", null);
       this.webSocket = t1;
       t1 = H.setRuntimeTypeInfo(new W._EventStream(t1, C.EventStreamProvider_open._eventType, false), [null]);
       t1.get$first(t1).then$1(new U.Client_connect_closure(this));
@@ -2879,6 +2879,10 @@ var $$ = {};
       response = t1.$index(json, "response");
       switch (response) {
         case "newMessage":
+          t1 = t1.$index(json, "msg");
+          document.querySelector("#chatWindow").textContent = t1;
+          break;
+        case "info":
           t1 = t1.$index(json, "msg");
           document.querySelector("#chatWindow").textContent = t1;
           break;

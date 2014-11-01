@@ -14,7 +14,7 @@ class Client {
 
   void connect() {
     connectPending = false;
-    webSocket = new WebSocket('ws://127.0.0.1:4040');
+    webSocket = new WebSocket('ws://127.0.0.1/ws/chat');
 
     webSocket.onOpen.first.then((_) {
       webSocket.onMessage.listen((e) {

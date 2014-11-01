@@ -19,6 +19,7 @@ class ReadHandler extends Actor with ActorLogging {
     case Tcp.Received(data: ByteString) =>
       val dataStr: String = data.utf8String.trim
       log.info("INCOMING DATA:\n{}", dataStr)
+      sender ! Tcp.Write(ByteString(dataStr))
 
     case Tcp.PeerClosed =>
       log.info("Connection closed")
