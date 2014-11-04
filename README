@@ -1,4 +1,5 @@
-This is your new Play application
+Chat client (Dart) and server (Scala/Akka/Play) using web sockets.
 =================================
 
-This file will be packaged with your application, when using `activator dist`.
+Simple example how to use Play Framework to connect a client in JavaScript in a browser to chat with other visitors using the same client.
+
