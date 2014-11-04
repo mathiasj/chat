@@ -42,8 +42,8 @@ class ActiveClient(out: ActorRef) extends Actor with ActorLogging {
       log.debug("ChatService ActorRef collected")
       context.watch(chatServiceRef)
       context.become(active(chatServiceRef))
-
       chatServiceRef ! Login(self, "default")
+
     case ActorIdentity(chatServiceId, None) =>
       context.stop(self)
 
