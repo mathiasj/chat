@@ -1,0 +1,15 @@
+@main("Chat example with Akka, Scala and Play.") {
+
+  <h1>Chat example with Akka, Scala and Play.</h1>
+
+  <div id="chatContainer">
+    <div id="chatWindow"></div><br>
+  </div>
+    <form id="chatForm">
+        <input type="text" id="sayText">
+        <input type="button" value="Say" id="sayButton">
+    </form>
+
+  <script type="application/dart" src="@routes.Assets.at("dart/client.dart")"></script>
+  <script src="@routes.Assets.at("javascripts/dart.js")"></script>
+}
