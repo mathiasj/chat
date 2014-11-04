@@ -67,7 +67,6 @@ class ActiveClient(out: ActorRef, name: String) extends Actor with ActorLogging 
       val reply: JsResult[String]= (json \ TYPE_MSG).validate[String]
       reply match {
         case s: JsSuccess[String] =>
-          //chatService ! Say(self, self, s.get)
           chatService ! Broadcast(self, s.get, "default")
         case e: JsError =>
           out ! composeJson(TYPE_INFO, "wrong format in json")
