@@ -5,8 +5,8 @@ import play.api.libs.json._
 import java.util.Calendar
 
 object ActiveClient {
-  def props(out: ActorRef, name: String = "Anonymous"): Props =
-    Props(new ActiveClient(out, name))
+  def props(out: ActorRef): Props =
+    Props(new ActiveClient(out))
 }
 
 object ClientProtocol {
@@ -25,7 +25,7 @@ object ClientProtocol {
   }
 }
 
-class ActiveClient(out: ActorRef, name: String) extends Actor with ActorLogging {
+class ActiveClient(out: ActorRef) extends Actor with ActorLogging {
   import ChatServiceProtocol._
   import ClientProtocol._
 
