@@ -23,9 +23,7 @@ class ChatService extends Actor with ActorLogging {
   def receive = {
     case Login(user, channel) =>
       log.debug("Register user with chat service: {}", (user -> channel).toString())
-      log.debug("before: {}", channels)
       channels = channels + (user -> channel)
-      log.debug("after: {}", channels)
       user ! ConnectionEstablished
 
     case Say(fromUser, toUser, msg) =>
@@ -36,7 +34,6 @@ class ChatService extends Actor with ActorLogging {
 
       // todo: filter channels
       channels.keys.foreach(toUser => {
-        log.debug("Broadcast to user {}", toUser)
         self ! Say(fromUser, toUser, msg)
       })
   }
