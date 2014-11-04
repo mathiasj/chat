@@ -2,8 +2,6 @@ package assets
 
 import akka.actor.{ActorRef, Props, Actor, ActorLogging}
 
-import scala.collection.immutable.HashMap
-
 object ChatService {
   def props: Props = Props(new ChatService())
 }
