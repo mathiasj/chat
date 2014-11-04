@@ -41,12 +41,28 @@ html{
     font-weight:400;
     padding-bottom:100px
 }
+body {
+    width: 100%;
+    text-align: center;
+}
+
+#chatContainer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
 
 #chatWindow {
-    width: 600px;
+    width: 100%;
+    text-align: left;
     border-width: 1px;
     border-style: solid;
     border-color: #eee;
     padding: 6px;
     margin: 4px;
+}
+
+.msg {
+    padding-top: 2px;
+
 }
